@@ -1,6 +1,5 @@
 import Log from "./log";
 import Setting from "../setting";
-import ServerCache from "./server-cache";
 
 class Head {
     auth;
@@ -34,7 +33,7 @@ class Head {
 
         //add column
         if(itemLength > 0){
-            if(Setting.preview === true && (auth.isPremium === true || ServerCache.status)){
+            if(Setting.preview === true && (auth.isPremium === true)){
                 $(td.get(0)).after(
                     $("<td>", {
                         class : 'colhead 11',

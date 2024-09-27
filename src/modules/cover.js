@@ -3,8 +3,6 @@ import Setting from "../setting";
 import Hash from "hash.js";
 import Cache from "../cache";
 import Log from "./log";
-import ServerCache from "./server-cache";
-import CoverHook from "./cover-hook";
 
 class Cover {
     key;
@@ -52,30 +50,12 @@ class Cover {
     }
 
     async nextTick() {
-        if(this.data.except) return;
-
-        if(Setting.serverCache === true){
-            if(this.cover && this.auth.isPremium && Cache.detail[this.data.detailId]?.cacheServer !== true) {
-                try {
-                    new ServerCache().set({ id: this.data.detailId, cover: this.cover, auth: this.auth });
-                } catch(e) {
-                    Log(this.data.hash, `hook set server cache cover fail!`);
-                }
-            }
-
-            //server cache for user without premium
-            if(this.cover === undefined && this.auth.isPremium === false) {
-                const item = ServerCache.items.find(item => item.id === this.data.detailId);
-                if(item) {
-                    this.cover = item?.cover_base ?? undefined;
-                }
-            }
-        }
+        if(this.data.except) return;        
 
         //hook source
         if(this.cover === undefined && this.auth.isPremium === false) {
             Log(this.data.hash, `hooking...`);
-            this.cover = await new CoverHook().hook({ data: this.data, auth: this.auth });
+            // this.cover = await new CoverHook().hook({ data: this.data, auth: this.auth });
             if(this.cover) {
                 Log(this.data.hash, `hook cover: ${this.cover}`);
             } else {

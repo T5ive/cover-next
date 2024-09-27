@@ -42,7 +42,6 @@ class Setting {
     static cleanDetailPromote = true;
     static fontSize = null;
     static debug = false;
-    static serverCache = false;
 
     static load() {
         Log('Load setting');
