@@ -54,6 +54,9 @@ import Warning from './warning';
         let head = new Head({ element: tr.get(0), itemLength: tr.length, auth: auth });
         let rows = [];
 
+        //insert picture header column
+        $(tr.get(0)).find('td').eq(1).before($('<td class="colhead" align="center">📷</td>'));
+
         //remove head row
         tr.splice(0, 1);
 
