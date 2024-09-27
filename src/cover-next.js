@@ -36,7 +36,7 @@ import Warning from './warning';
     const auth = new Auth();
 
     //warning
-    Warning.make(Cache);
+    //Warning.make(Cache);
 
     //working
     if (
