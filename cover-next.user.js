@@ -33,10 +33,10 @@
 // @match        https://bearbit.co/details.php*
 // @grant        GM_addStyle
 // @grant        GM_xmlhttpRequest
-// @require      https://raw.githubusercontent.com/kon3ko/cover-next/master/dist/cover-next.js?version=2.20
-// @updateURL    https://raw.githubusercontent.com/kon3ko/cover-next/master/cover-next.user.js
-// @downloadURL  https://raw.githubusercontent.com/kon3ko/cover-next/master/cover-next.user.js
-// @supportURL   https://github.com/kon3ko/cover-next/issues
+// @require      https://raw.githubusercontent.com/T5ive/cover-next/refs/heads/dev/dist/cover-next.js?version=2.20
+// @updateURL    https://github.com/T5ive/cover-next/raw/refs/heads/dev/cover-next.user.js
+// @downloadURL  https://github.com/T5ive/cover-next/raw/refs/heads/dev/cover-next.user.js
+// @supportURL   https://github.com/T5ive/cover-next/issues
 // @connect      img.in.th
 // @connect      bpicc.cc
 // @connect      imgtrue.com
